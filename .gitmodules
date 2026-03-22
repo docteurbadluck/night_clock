@@ -1,0 +1,6 @@
+[submodule "libs/pico-ssd1306"]
+	path = libs/pico-ssd1306
+	url = https://github.com/daschr/pico-ssd1306
+[submodule "tests/unity"]
+	path = tests/unity
+	url = https://github.com/ThrowTheSwitch/Unity.git
