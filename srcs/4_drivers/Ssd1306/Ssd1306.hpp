@@ -16,6 +16,7 @@ public:
 	~Ssd1306() = default;
 
 	void display(const std::string &time) override;
+	bool selfTest() override;
 
 private:
 	ssd1306_t _disp = {};

@@ -8,6 +8,7 @@ class Clock
 	public:
 		virtual ~Clock() = default;
 		virtual std::string getCurrentTime() = 0;
+		virtual bool selfTest() = 0;
 };
 
 }

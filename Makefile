@@ -48,8 +48,9 @@ clean:
 	rm -rf $(BUILD_DIR)/srcs $(BUILD_DIR)/unity
 
 fclean: clean
-	rm -rf $(BUILD_DIR)
+	rm -rf $(BUILD_DIR) build
 
 re: fclean compile
+	cmake -B build -G Ninja && ninja -C build
 
 .PHONY: all compile clean fclean re test

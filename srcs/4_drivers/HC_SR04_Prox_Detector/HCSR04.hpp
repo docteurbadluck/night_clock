@@ -19,6 +19,7 @@ class HCSR04 : public interface::ProxDetector
 		HCSR04(uint8_t pin_trig, uint8_t pin_echo, uint8_t distance_cm);
 		~HCSR04() = default;
 		bool	triggered() override;
+		bool	selfTest() override;
 };
 
 }

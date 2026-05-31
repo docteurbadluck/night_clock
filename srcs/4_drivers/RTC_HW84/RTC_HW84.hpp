@@ -15,6 +15,7 @@ class RTC_HW84 : public interface::Clock
 	
 		std::string	getCurrentTime() override;
 		void		setTime(const std::string &time);
+		bool		selfTest() override;
 	
 	private:
 		i2c_inst_t *_i2c;

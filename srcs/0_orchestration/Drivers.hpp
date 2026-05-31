@@ -15,13 +15,15 @@ struct Drivers
 	drivers::pico_pwm led;
 
 	static constexpr uint8_t PIN_LED          = 22;
-	static constexpr uint8_t PIN_PROX_TRIG    = 26;
-	static constexpr uint8_t PIN_PROX_ECHO    = 27;
+	static constexpr uint8_t PIN_LED_SHUNT    = 28;
+	static constexpr uint8_t PIN_PROX_TRIG    = 27;
+	static constexpr uint8_t PIN_PROX_ECHO    = 26;
 	static constexpr uint8_t DISTANCE_LIMITE  = 80;
 
 	Drivers(i2c_inst_t *i2c)
-		: screen(i2c), rtc(i2c), prox(PIN_PROX_TRIG, PIN_PROX_ECHO, DISTANCE_LIMITE), led(PIN_LED)
-	{}
+		: screen(i2c), rtc(i2c), prox(PIN_PROX_TRIG, PIN_PROX_ECHO, DISTANCE_LIMITE), led(PIN_LED, PIN_LED_SHUNT)
+	{
+	}
 };
 
 }
