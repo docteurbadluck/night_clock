@@ -9,7 +9,10 @@ std::string RTC_HW84::getCurrentTime()
 {
 	const auto raw = requestGetTime();
 	if (!raw)
+	{
+		printf("RTC: I2C read failed\n");
 		return "";
+	}
 	return parseTime(*raw);
 }
 

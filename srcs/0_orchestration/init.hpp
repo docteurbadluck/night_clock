@@ -7,7 +7,7 @@
 
 namespace orchestration {
 
-static constexpr uint TEST_PIN      = 10;
+static constexpr uint TEST_PIN      = 8;
 static constexpr uint ERROR_LED_PIN = 15;
 static constexpr uint I2C_SDA_PIN   = 12;
 static constexpr uint I2C_SCL_PIN   = 13;
