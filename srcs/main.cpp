@@ -24,6 +24,7 @@ int main()
 	orchestration::Usecases	uc(drivers);
 	domain::Context			ctx("00:00:00", "21:00:00", "07:00:00");
 	printf("init successfull\n");
+	return 0;
 
 	absolute_time_t next_tick = get_absolute_time();
 	while (true)
@@ -32,7 +33,6 @@ int main()
 		orchestration::update_context(uc, ctx);
 		orchestration::compute_context(uc, ctx);
 		sleep_until(next_tick);
-		printf(".\n");
 	}
 	return 0;
 }

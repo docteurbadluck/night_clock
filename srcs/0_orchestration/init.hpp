@@ -7,8 +7,10 @@
 
 namespace orchestration {
 
-static constexpr uint TEST_PIN     = 13;
-static constexpr uint ERROR_LED_PIN = 17;
+static constexpr uint TEST_PIN      = 10;
+static constexpr uint ERROR_LED_PIN = 15;
+static constexpr uint I2C_SDA_PIN   = 12;
+static constexpr uint I2C_SCL_PIN   = 13;
 
 inline void init_error_led()
 {
@@ -20,10 +22,10 @@ inline void init_error_led()
 inline void init_i2c()
 {
 	i2c_init(i2c0, 400000);
-	gpio_set_function(4, GPIO_FUNC_I2C);
-	gpio_set_function(9, GPIO_FUNC_I2C);
-	gpio_pull_up(4);
-	gpio_pull_up(9);
+	gpio_set_function(I2C_SDA_PIN, GPIO_FUNC_I2C);
+	gpio_set_function(I2C_SCL_PIN, GPIO_FUNC_I2C);
+	gpio_pull_up(I2C_SDA_PIN);
+	gpio_pull_up(I2C_SCL_PIN);
 }
 
 inline void init_test_button()
@@ -35,10 +37,11 @@ inline void init_test_button()
 
 inline bool run_self_tests(Drivers &drivers)
 {
-	bool led_ok    = drivers.led.selfTest();
 	bool rtc_ok    = drivers.rtc.selfTest();
 	bool screen_ok = drivers.screen.selfTest();
 	bool prox_ok   = drivers.prox.selfTest();
+	bool led_ok    = drivers.led.selfTest();
+
 
 	if (!led_ok)    printf("ERROR: LED not responding\n");
 	if (!rtc_ok)    printf("ERROR: RTC not responding\n");

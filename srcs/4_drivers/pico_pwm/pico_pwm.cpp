@@ -26,7 +26,10 @@ pico_pwm::pico_pwm(uint8_t pin, uint8_t adc_pin, float shunt_ohm)
 float pico_pwm::_read_current() const
 {
 	adc_select_input(_adc_pin - 26);
-	float voltage = adc_read() * 3.3f / 4095.0f;
+	uint32_t sum = 0;
+	for (int i = 0; i < 16; i++)
+		sum += adc_read();
+	float voltage = (sum / 16.0f) * 3.3f / 4095.0f;
 	return voltage / _shunt_ohm;
 }
 

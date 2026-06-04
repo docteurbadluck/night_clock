@@ -9,8 +9,12 @@ static constexpr float MAX_CURRENT_OFF_A = 0.020f; // 20 mA maximum quand étein
 
 bool pico_pwm::selfTest()
 {
-	apply_duty(1.0f);
-	sleep_ms(50);
+	for (int i = 0; i <= 100; i++)
+	{
+		apply_duty(i / 100.0f);
+		sleep_ms(1);
+	}
+	sleep_ms(200);
 
 	if (_adc_pin != 0xFF)
 	{
@@ -25,7 +29,7 @@ bool pico_pwm::selfTest()
 	}
 
 	apply_duty(0.0f);
-	sleep_ms(50);
+	sleep_ms(200);
 
 	if (_adc_pin != 0xFF)
 	{
