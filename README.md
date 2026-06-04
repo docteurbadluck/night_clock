@@ -32,6 +32,9 @@ Every boot runs a `selfTest()` on each component. The RTC writes and reads back 
 
 `stress_test.sh` automates 100 reboots via OpenOCD (SWD) and reports per-component failure rates.
 
+## Schematic
+[output.pdf](https://github.com/user-attachments/files/28601989/output.pdf)
+
 ## Build & Flash
 
 ```bash
