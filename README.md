@@ -1,7 +1,8 @@
 # Night Clock
 
+<p align="center">
 <img width="400" height="446" alt="showcase" src="https://github.com/user-attachments/assets/dec2e177-5023-448b-905f-f24ea9784bf1" />
-
+</p>
 <img width="2505" height="1822" alt="IMG_20260604_141542099_MFNR~2" src="https://github.com/user-attachments/assets/27befef9-3e25-40a8-90ad-199b31f5424d" />
 
 <img width="2855" height="2397" alt="IMG_20260604_143532136_MFNR" src="https://github.com/user-attachments/assets/ff9cd25e-e5ad-4c8e-83bd-ac992a46a71d" />
