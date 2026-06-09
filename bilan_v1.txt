@@ -1,0 +1,74 @@
+goal : 
+initial goal : light up the way when i pass in the coridor during night.
+result : does light up the way and also show what time is it.
+
+work:
+work good.
+
+problem :
+estetic -> the system is not enclosed.
+the screen is not stick and can move by accident.
+light turning off could be at the end a bit smoother.
+
+cause : 
+estetic -> was not considered as a important point soon enough.
+screen -> was fine when the project was on a table but it is know on a wall.
+
+technical point :
+alimentation : only one cable for everything.
+heat : no worries.
+stability : pretty good, in 2 days plugged non stop, no problem has been found.
+
+cost : 
+Raspberry Pi Pico 2 W : 6–10 €
+SSD1306 128×32 OLED : 3–6 €
+DS1307 RTC (HW-84) : 2–5 €
+HC-SR04 : 2–4 €
+IRLZ44N MOSFET : 1–3 €
+LM2596 buck converter : 2–5 €
++ led stripe (2,5 m) + alim : 10 euro.
+total 35 euro.
+oversized or useless : the RTC could used the one in the pico.
+
+physic integration:
+size : 21x X 17y X 3z CM
+wirering : simple : 1 alim, one clips for the light
+the light are in wood which has been screwd to the wall. a lighter system could use two face adhesive.
+
+what is good ? 
+Stable.
+plug and play.
+
+possible improvement?
+estetic :size, enclosure
+flexibility :we could imagine to change the project to make it more flexible.
+this project cover one very precise usecase but we could allow people 
+to change option to cover the own need. (distance to declenche the mecanisme. or if you put it in a meuble, you would like that when you open the door it light up, so reverse the logic...
+changing hour is difficult with this version.
+create an web interface could make us save the price of the screen, the rtc, button... and reduce this way the cost.
+to something like 10 euro strip and alim not include. instead of 25.
+light holder system could be more easier to cut and stick where you want to. 
+
+
+idea for v2 :
+Un module unique de contrôle d’éclairage LED pour la maison, combinant alimentation, contrôle des LED et logique programmable via une interface web locale. Le système est destiné à des usages simples (placards, couloirs, pièces) mais configurable : déclenchement par mouvement, horaires, capteurs, ou règles personnalisées, sans dépendre d’un hub externe ou d’un cloud.
+
+Points forts
+Simplicité d’usage cible : un seul bloc à installer pour gérer l’éclairage
+Flexibilité logicielle : configuration via interface web (règles, comportements)
+Autonomie locale : pas besoin de cloud ou serveur externe
+Approche modulaire : capteurs et comportements extensibles
+Positionnement clair : entre produit grand public fermé et DIY complexe
+Réduction potentielle des coûts système : remplacement de plusieurs appareils (contrôleur + capteurs + minuterie + hub)
+Points faibles
+Complexité produit élevée : hardware + alimentation + sécurité + UX dans un seul boîtier
+UX difficile à simplifier : flexibilité vs facilité d’utilisation (problème classique)
+Concurrence indirecte forte :
+écosystèmes fermés simples (Hue, Govee)
+solutions DIY puissantes (WLED, ESPHome)
+Segmentation marché floue : grand public veut simple, makers veulent modifiable
+Support et cas d’usage multiples : risque de produit “trop générique”
+Contraintes électriques (12V/24V, protections, certifications si produit commercial)
+Lecture globale
+
+C’est une idée solide dans un “entre-deux” réel du marché, mais le défi principal n’est pas technique : il est dans la simplification du produit sans perdre la flexibilité.
